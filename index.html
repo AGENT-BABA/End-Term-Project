@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget & Expense Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Chart -->
+        <div class="chart-container">
+            <h2>Category Breakdown</h2>
+            <canvas id="left-chart"></canvas>
+        </div>
+
+        <div class="expense-form-container">
+            <h1>Expense Tracker</h1>
+            
+            <div class="expense-form">
+                <input type="text" id="expense-name" placeholder="Expense Name">
+                <input type="number" id="expense-amount" placeholder="Amount">
+                
+                <select id="expense-category">
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Education">Education</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="text" id="other-category" placeholder="Custom Category" style="display:none;">
+                <button onclick="addExpense()">Add Expense</button>
+            </div>
+
+            <h2>Expenses</h2>
+            <ul id="expense-list"></ul>
+
+            <h2>Convert Currency</h2>
+            <select id="currency" onchange="convertCurrency()">
+                <option value="USD">USD </option>
+                <option value="EUR">EUR </option>
+                <option value="GBP">GBP </option>
+                <option value="INR">INR </option>
+                <option value="AUD">AUD </option>
+                <option value="CAD">CAD </option>
+                <option value="SGD">SGD </option>
+                <option value="CHF">CHF </option>
+                <option value="MYR">MYR </option>
+                <option value="JPY">JPY </option>
+                <option value="CNY">CNY </option>
+                <option value="NZD">NZD </option>
+                <option value="HKD">HKD </option>
+                <option value="KRW">KRW </option>
+                <option value="BRL">BRL </option>
+                <option value="ZAR">ZAR </option>
+                <option value="MXN">MXN </option>
+                <option value="PHP">PHP </option>
+                <option value="THB">THB </option>
+                <option value="RUB">RUB </option>
+                <option value="AED">AED </option>
+                <option value="SEK">SEK </option>
+                <option value="NOK">NOK </option>
+                <option value="DKK">DKK </option>
+                <option value="PLN">PLN </option>
+                <option value="IDR">IDR </option>
+                <option value="HUF">HUF </option>
+                <option value="CZK">CZK </option>
+                <option value="SAR">SAR </option>
+                <option value="ILS">ILS </option>
+                <option value="TRY">TRY </option>
+            </select>
+
+            <h2 id="total-heading" style="display:none;"><p id="converted-total"></p></h2>
+            
+        </div>
+
+        <!-- Right Chart -->
+        <div class="chart-container">
+            <h2>Expense Trends</h2>
+            <canvas id="right-chart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

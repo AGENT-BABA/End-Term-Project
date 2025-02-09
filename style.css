@@ -1,0 +1,201 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(125deg, #2c8f55, #226a94); /* Dark gradient background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Container */
+.container {
+    background: #1e2a3a; /* Dark background for container */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 90vw;
+    max-width: 1800px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: transform 0.2s ease-in-out;
+    color: #ecf0f1; /* Light text color for contrast */
+}
+
+/* Hover effect */
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Chart Containers */
+.chart-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-width: 300px;
+}
+
+/* Chart Animation */
+canvas {
+    max-width: 100%;
+    max-height: 250px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Expense Form */
+.expense-form-container {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    min-width: 350px;
+}
+
+/* Form Styling */
+.expense-form {
+    width: 100%;
+    max-width: 400px;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Form Inputs */
+.expense-form input,
+.expense-form select,
+.expense-form button {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #4f5b66; /* Subtle darker border for inputs */
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Styling */
+.expense-form button {
+    background: linear-gradient(45deg, #2980b9, #3498db); /* Blue gradient for button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Button Hover Effect */
+.expense-form button:hover {
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Reverse gradient on hover */
+    transform: scale(1.05);
+}
+
+/* Expense List */
+#expense-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Individual Expense Items */
+#expense-list li {
+    background: #34495e; /* Darker blue-gray for expense items */
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Expense Item Hover */
+#expense-list li:hover {
+    transform: scale(1.03);
+}
+
+/* Delete Button */
+#expense-list li button {
+    background: linear-gradient(45deg, #e74c3c, #c0392b); /* Red gradient for urgency */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Delete Button Hover */
+#expense-list li button:hover {
+    background: linear-gradient(45deg, #c0392b, #992d22);
+    transform: scale(1.1);
+}
+
+/* Converted Total */
+#converted-total {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #f39c12; /* Bright yellow for the total */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .container {
+        width: 95vw;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .chart-container {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .expense-form {
+        width: 90%;
+    }
+}
+
+/* Small Screens */
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+
+    .expense-form button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
